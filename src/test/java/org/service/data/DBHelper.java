@@ -8,6 +8,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
+
 
 public class DBHelper {
 
@@ -15,48 +17,46 @@ public class DBHelper {
     public static String expectedPaymentStatusApproved = "APPROVED";
     public static String expectedPaymentStatusDeclined = "DECLINED";
 
-    private static Connection connection() throws SQLException {
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/app", "app", "pass");
-    }
+    private static String url = System.getProperty("db.url");
+    private static String user = System.getProperty("db.user");
+    private static String password = System.getProperty("db.password");
 
-
-
-
-    public static String getDebitCardStatus() throws SQLException {
-        val statusSQL = "SELECT status FROM payment_entity;";
-        String status = "";
-
-        try (val statusStmt = connection().createStatement();) {
-
-            try (val rs = statusStmt.executeQuery(statusSQL)) {
-                if (rs.next()) {
-                    status = rs.getString(1);
-                }
-            }
-        }
-        return status;
-    }
-
-    public static String getCreditStatus() throws SQLException {
-        val statusSQL = "SELECT status FROM credit_request_entity;";
-        String status = "";
-
-        try (val statusStmt = connection().createStatement();) {
-
-            try (val rs = statusStmt.executeQuery(statusSQL)) {
-                if (rs.next()) {
-                    status = rs.getString(1);
-                }
-            }
+    @SneakyThrows
+    public static String getDebitCardStatus() {
+        QueryRunner runner = new QueryRunner();
+        String dataSQL = "SELECT status FROM payment_entity ORDER BY created DESC LIMIT 1";
+        String status = null;
+        try (
+                Connection connection = DriverManager.getConnection(
+                        url, user, password
+                )
+        ) {
+            status = runner.query(connection, dataSQL, new ScalarHandler<>());
         }
         return status;
     }
 
     @SneakyThrows
-    public static void cleanDatabase() {
-        val connection = connection();
-        runner.execute(connection, "DELETE FROM payment_entity;");
-        runner.execute(connection, "DELETE FROM credit_request_entity;");
+    public static String getCreditStatus() {
+        QueryRunner runner = new QueryRunner();
+        String dataSQL = "SELECT status FROM credit_request_entity ORDER BY created DESC LIMIT 1";
+        String status = null;
+        try (
+                Connection connection = DriverManager.getConnection (
+                        url, user, password
+                )
+        ) {
+            status = runner.query(connection, dataSQL, new ScalarHandler<>());
+        }
+        return status;
     }
 
+    @SneakyThrows
+    public static void cleanDatabase() throws SQLException {
+        val runner = new QueryRunner();
+        val conn = DriverManager.getConnection(url, user, password);
+        runner.update(conn, "DELETE FROM credit_request_entity;");
+        runner.update(conn, "DELETE FROM payment_entity;");
+        runner.update(conn, "DELETE FROM order_entity;");
+    }
 }

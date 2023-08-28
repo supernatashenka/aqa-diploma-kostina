@@ -1,5 +1,4 @@
 package org.service.test;
-
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.service.data.DBHelper;
@@ -25,7 +24,7 @@ public class DBTest {
     }
 
     @AfterEach
-    void clearTable() {
+    void clearTable() throws SQLException {
         DBHelper.cleanDatabase();
     }
 
@@ -39,7 +38,7 @@ public class DBTest {
     MainPage mainPage = new MainPage();
 
     @Test
-    void shouldApproveDebitPaymentCard1() throws SQLException {
+    void shouldApproveDebitPayment() throws SQLException {
         mainPage.payWithDebitCard();
         mainPage.fillCardNumber1();
         mainPage.fillDateOwnerCVV();
@@ -50,7 +49,7 @@ public class DBTest {
     }
 
     @Test
-    void shouldDeclineDebitPaymentCard2() throws SQLException {
+    void shouldDeclineDebitPayment() throws SQLException {
         mainPage.payWithDebitCard();
         mainPage.fillCardNumber2();
         mainPage.fillDateOwnerCVV();
@@ -61,7 +60,7 @@ public class DBTest {
     }
 
     @Test
-    void shouldApproveCreditPaymentCard1() throws SQLException {
+    void shouldApproveCreditPayment() throws SQLException {
         mainPage.payWithCreditCard();
         mainPage.fillCardNumber1();
         mainPage.fillDateOwnerCVV();
@@ -71,7 +70,7 @@ public class DBTest {
     }
 
     @Test
-    void shouldDeclineCreditPaymentCard2() throws SQLException {
+    void shouldDeclineCreditPayment() throws SQLException {
         mainPage.payWithCreditCard();
         mainPage.fillCardNumber2();
         mainPage.fillDateOwnerCVV();

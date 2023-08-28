@@ -18,11 +18,6 @@ public class DataGenerator {
         return faker.number().digits(8);
     }
 
-    public static String generateRandomText() {
-        Faker faker = new Faker(new Locale("en"));
-        return faker.name().firstName();
-    }
-
     public static String generateCurrentMonth() {
         LocalDate date = LocalDate.now();
         int currentMonth = date.getMonthValue();
@@ -42,9 +37,6 @@ public class DataGenerator {
             return (String.valueOf(previousMonth));
     }
 
-
-
-
     public static String generateNextMonth() {
         LocalDate date = LocalDate.now();
         int currentMonth = date.getMonthValue();
@@ -55,11 +47,8 @@ public class DataGenerator {
             return (String.valueOf(nextMonth));
     }
 
-
-
-
     public static String generateMonthNumberGreaterThanTwelve() {
-        int greaterTwelve = (int) (13+ Math.random()*99);;
+        int greaterTwelve = (int) ((Math.random()*86)+13);
         return (String.valueOf(greaterTwelve));
     }
 
@@ -97,18 +86,6 @@ public class DataGenerator {
         return faker.name().fullName();
     }
 
-    public static String generateToUpperCaseName() {
-        Faker faker = new Faker();
-        String name = faker.name().fullName();
-        return name.toUpperCase();
-    }
-
-
-    public static String generateToLowerCaseName() {
-        Faker faker = new Faker();
-        String name = faker.name().fullName();
-        return name.toLowerCase();
-    }
 
     public static String generateCVC() {
         Faker faker = new Faker();

@@ -5,8 +5,6 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import org.service.data.DataHelper;
 
-
-
 public class BuyTourTest {
 
     @BeforeAll
