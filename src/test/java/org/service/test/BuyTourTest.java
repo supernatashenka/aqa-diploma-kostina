@@ -52,61 +52,61 @@ public class BuyTourTest {
     }
 
 
-//    // Bug
-//    @Test
-//    @DisplayName("3. Оплата с помощью отклоненной карты, поля заполнены валидными значениями, путем нажатия кнопки \"Купить\"")
-//    void shouldNotDebitPaymentDeclinedCard() {
-//        mainPage.payWithDebitCard();
-//        mainPage.fillCardNumber2();
-//        mainPage.fillNextMonth();
-//        mainPage.fillYearCurrent();
-//        mainPage.fillValidOwner();
-//        mainPage.fillValidCvv();
-//        mainPage.clickContinueButton();
-//        mainPage.findErrorNotification();
-//    }
+    // Bug
+    @Test
+    @DisplayName("3. Оплата с помощью отклоненной карты, поля заполнены валидными значениями, путем нажатия кнопки \"Купить\"")
+    void shouldNotDebitPaymentDeclinedCard() {
+        mainPage.payWithDebitCard();
+        mainPage.fillCardNumber2();
+        mainPage.fillNextMonth();
+        mainPage.fillYearCurrent();
+        mainPage.fillValidOwner();
+        mainPage.fillValidCvv();
+        mainPage.clickContinueButton();
+        mainPage.findErrorNotification();
+    }
 
 
-//    // bug
-//    @Test
-//    @DisplayName("4. Оплата с помощью отклоненной карты, поля заполнены валидными значениями, путем нажатия кнопки \"Купить в кредит\"")
-//    void shouldNotCreditPaymentDeclinedCard() {
-//        mainPage.payWithCreditCard();
-//        mainPage.fillCardNumber2();
-//        mainPage.fillNextMonth();
-//        mainPage.fillYearCurrent();
-//        mainPage.fillValidOwner();
-//        mainPage.fillValidCvv();
-//        mainPage.clickContinueButton();
-//        mainPage.findErrorNotification();
-//
-//    }
+    // bug
+    @Test
+    @DisplayName("4. Оплата с помощью отклоненной карты, поля заполнены валидными значениями, путем нажатия кнопки \"Купить в кредит\"")
+    void shouldNotCreditPaymentDeclinedCard() {
+        mainPage.payWithCreditCard();
+        mainPage.fillCardNumber2();
+        mainPage.fillNextMonth();
+        mainPage.fillYearCurrent();
+        mainPage.fillValidOwner();
+        mainPage.fillValidCvv();
+        mainPage.clickContinueButton();
+        mainPage.findErrorNotification();
 
-//    //bug
-//    @Test
-//    @DisplayName("5.Отправка пустой формы покупки тура путем нажатия кнопки \"Купить\"")
-//    void shouldNotDebitPaymentEmptyForm() {
-//        mainPage.payWithDebitCard();
-//        mainPage.clickContinueButton();
-//        mainPage.getCardNumberError("Поле обязательно для заполнения");
-//        mainPage.getMonthError("Поле обязательно для заполнения");
-//        mainPage.getYearError("Поле обязательно для заполнения");
-//        mainPage.getCardholderError("Поле обязательно для заполнения");
-//        mainPage.getCVCError("Поле обязательно для заполнения");
-//    }
+    }
 
-//    //bug
-//    @Test
-//    @DisplayName("6. Отправка пустой формы покупки тура путем нажатия кнопки \"Купить в кредит\"")
-//    void shouldNotCreditPaymentEmptyForm() {
-//        mainPage.payWithCreditCard();
-//        mainPage.clickContinueButton();
-//        mainPage.getCardNumberError("Поле обязательно для заполнения");
-//        mainPage.getMonthError("Поле обязательно для заполнения");
-//        mainPage.getYearError("Поле обязательно для заполнения");
-//        mainPage.getCardholderError("Поле обязательно для заполнения");
-//        mainPage.getCVCError("Поле обязательно для заполнения");
-//    }
+    //bug
+    @Test
+    @DisplayName("5.Отправка пустой формы покупки тура путем нажатия кнопки \"Купить\"")
+    void shouldNotDebitPaymentEmptyForm() {
+        mainPage.payWithDebitCard();
+        mainPage.clickContinueButton();
+        mainPage.getCardNumberError("Поле обязательно для заполнения");
+        mainPage.getMonthError("Поле обязательно для заполнения");
+        mainPage.getYearError("Поле обязательно для заполнения");
+        mainPage.getCardholderError("Поле обязательно для заполнения");
+        mainPage.getCVCError("Поле обязательно для заполнения");
+    }
+
+    //bug
+    @Test
+    @DisplayName("6. Отправка пустой формы покупки тура путем нажатия кнопки \"Купить в кредит\"")
+    void shouldNotCreditPaymentEmptyForm() {
+        mainPage.payWithCreditCard();
+        mainPage.clickContinueButton();
+        mainPage.getCardNumberError("Поле обязательно для заполнения");
+        mainPage.getMonthError("Поле обязательно для заполнения");
+        mainPage.getYearError("Поле обязательно для заполнения");
+        mainPage.getCardholderError("Поле обязательно для заполнения");
+        mainPage.getCVCError("Поле обязательно для заполнения");
+    }
 
     @Test
     @DisplayName("7. Отправка формы покупки тура с невалидными значениями номера карты, путем нажатия кнопки \"Купить\"")
@@ -357,65 +357,65 @@ public class BuyTourTest {
     }
 
 
-//    //27 баг
-//    @Test
-//    @DisplayName("27. Оплата по карте, где в поле \"Владелец\" заполнено кирилицей, путем нажатия кнопки \"Купить")
-//    void shouldNotPayCyrillicNameDebitPayment() {
-//        mainPage.payWithDebitCard();
-//        mainPage.fillCardNumber1();
-//        mainPage.fillNextMonth();
-//        mainPage.fillYearCurrent();
-//        mainPage.fillOwnerCyrillic();
-//        mainPage.fillValidCvv();
-//        mainPage.clickContinueButton();
-//        mainPage.getCardholderError("Неверный формат");
-//    }
+    //27 баг
+    @Test
+    @DisplayName("27. Оплата по карте, где в поле \"Владелец\" заполнено кирилицей, путем нажатия кнопки \"Купить")
+    void shouldNotPayCyrillicNameDebitPayment() {
+        mainPage.payWithDebitCard();
+        mainPage.fillCardNumber1();
+        mainPage.fillNextMonth();
+        mainPage.fillYearCurrent();
+        mainPage.fillOwnerCyrillic();
+        mainPage.fillValidCvv();
+        mainPage.clickContinueButton();
+        mainPage.getCardholderError("Неверный формат");
+    }
 
-//    //28. bug
-//
-//    @Test
-//    @DisplayName("28. Оплата по карте, где в поле \"Владелец\" заполнено кирилицей, путем нажатия кнопки \"Купить в кредит")
-//    void shouldNotPayCyrillicNameCreditPayment() {
-//        mainPage.payWithCreditCard();
-//        mainPage.fillCardNumber1();
-//        mainPage.fillNextMonth();
-//        mainPage.fillYearCurrent();
-//        mainPage.fillOwnerCyrillic();
-//        mainPage.fillValidCvv();
-//        mainPage.clickContinueButton();
-//        mainPage.getCardholderError("Неверный формат");
-//    }
+    //28. bug
 
-
-//    //29.bug
-//    @Test
-//    @DisplayName("29. Оплата по карте, где в поле \"Владелец\" указаны только имя, путем нажатия кнопки \"Купить")
-//    void shouldNotPayOnlyNameDebitPayment() {
-//        mainPage.payWithDebitCard();
-//        mainPage.fillCardNumber1();
-//        mainPage.fillNextMonth();
-//        mainPage.fillYearCurrent();
-//        mainPage.fillOwnerFirstName();
-//        mainPage.fillValidCvv();
-//        mainPage.clickContinueButton();
-//        mainPage.getCardholderError("Неверный формат");
-//    }
+    @Test
+    @DisplayName("28. Оплата по карте, где в поле \"Владелец\" заполнено кирилицей, путем нажатия кнопки \"Купить в кредит")
+    void shouldNotPayCyrillicNameCreditPayment() {
+        mainPage.payWithCreditCard();
+        mainPage.fillCardNumber1();
+        mainPage.fillNextMonth();
+        mainPage.fillYearCurrent();
+        mainPage.fillOwnerCyrillic();
+        mainPage.fillValidCvv();
+        mainPage.clickContinueButton();
+        mainPage.getCardholderError("Неверный формат");
+    }
 
 
-//    //30. баг
-//
-//    @Test
-//    @DisplayName("30. Оплата по карте, где в поле \"Владелец\" указаны только имя, путем нажатия кнопки \"Купить в кредит")
-//    void shouldNotPayOnlyNameCreditPayment() {
-//        mainPage.payWithCreditCard();
-//        mainPage.fillCardNumber1();
-//        mainPage.fillNextMonth();
-//        mainPage.fillYearCurrent();
-//        mainPage.fillOwnerFirstName();
-//        mainPage.fillValidCvv();
-//        mainPage.clickContinueButton();
-//        mainPage.getCardholderError("Неверный формат");
-//    }
+    //29.bug
+    @Test
+    @DisplayName("29. Оплата по карте, где в поле \"Владелец\" указаны только имя, путем нажатия кнопки \"Купить")
+    void shouldNotPayOnlyNameDebitPayment() {
+        mainPage.payWithDebitCard();
+        mainPage.fillCardNumber1();
+        mainPage.fillNextMonth();
+        mainPage.fillYearCurrent();
+        mainPage.fillOwnerFirstName();
+        mainPage.fillValidCvv();
+        mainPage.clickContinueButton();
+        mainPage.getCardholderError("Неверный формат");
+    }
+
+
+    //30. баг
+
+    @Test
+    @DisplayName("30. Оплата по карте, где в поле \"Владелец\" указаны только имя, путем нажатия кнопки \"Купить в кредит")
+    void shouldNotPayOnlyNameCreditPayment() {
+        mainPage.payWithCreditCard();
+        mainPage.fillCardNumber1();
+        mainPage.fillNextMonth();
+        mainPage.fillYearCurrent();
+        mainPage.fillOwnerFirstName();
+        mainPage.fillValidCvv();
+        mainPage.clickContinueButton();
+        mainPage.getCardholderError("Неверный формат");
+    }
 
     @Test
     @DisplayName("31. Оплата по карте с пустым полем \"Владелец\", путем нажатия кнопки \"Купить")
@@ -472,34 +472,34 @@ public class BuyTourTest {
 
     }
 
-//    //35. баг
-//    @Test
-//    @DisplayName("35.  Оплата по карте с пустым полем \"CVV\", путем нажатия кнопки \"Купить")
-//    void shouldNotPayEmptyCVVDebitPayment() {
-//        mainPage.payWithDebitCard();
-//        mainPage.fillCardNumber1();
-//        mainPage.fillNextMonth();
-//        mainPage.fillYearCurrent();
-//        mainPage.fillValidOwner();
-//        mainPage.clickContinueButton();
-//        mainPage.getCVCError("Поле обязательно для заполнения");
-//
-//    }
+    //35. баг
+    @Test
+    @DisplayName("35.  Оплата по карте с пустым полем \"CVV\", путем нажатия кнопки \"Купить")
+    void shouldNotPayEmptyCVVDebitPayment() {
+        mainPage.payWithDebitCard();
+        mainPage.fillCardNumber1();
+        mainPage.fillNextMonth();
+        mainPage.fillYearCurrent();
+        mainPage.fillValidOwner();
+        mainPage.clickContinueButton();
+        mainPage.getCVCError("Поле обязательно для заполнения");
+
+    }
 
 
-//    //36. bug
-//    @Test
-//    @DisplayName("36.  Оплата по карте с пустым полем \"CVV\", путем нажатия кнопки \"Купить в кредит")
-//    void shouldNotPayEmptyCVVCreditPayment() {
-//        mainPage.payWithCreditCard();
-//        mainPage.fillCardNumber1();
-//        mainPage.fillNextMonth();
-//        mainPage.fillYearCurrent();
-//        mainPage.fillValidOwner();
-//        mainPage.clickContinueButton();
-//        mainPage.getCVCError("Поле обязательно для заполнения");
-//
-//    }
+    //36. bug
+    @Test
+    @DisplayName("36.  Оплата по карте с пустым полем \"CVV\", путем нажатия кнопки \"Купить в кредит")
+    void shouldNotPayEmptyCVVCreditPayment() {
+        mainPage.payWithCreditCard();
+        mainPage.fillCardNumber1();
+        mainPage.fillNextMonth();
+        mainPage.fillYearCurrent();
+        mainPage.fillValidOwner();
+        mainPage.clickContinueButton();
+        mainPage.getCVCError("Поле обязательно для заполнения");
+
+    }
 }
 
 
