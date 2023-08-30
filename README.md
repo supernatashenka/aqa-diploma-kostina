@@ -1,4 +1,6 @@
 # Дипломный проект по профессии «Тестировщик»
+[![Build status](https://ci.appveyor.com/api/projects/status/ri8y32ynxef4s0b0?svg=true)](https://ci.appveyor.com/project/supernatashenka/aqa-diploma-kostina)
+
 ## Документация
 * [Текст задания](https://github.com/netology-code/qa-diploma)
 * [План автоматизации](https://github.com/supernatashenka/aqa-diploma-kostina/blob/main/Documents/Plan.md)
