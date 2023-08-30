@@ -4,8 +4,8 @@
 ## Документация
 * [Текст задания](https://github.com/netology-code/qa-diploma)
 * [План автоматизации](https://github.com/supernatashenka/aqa-diploma-kostina/blob/main/Documents/Plan.md)
-* [Отчёт о проведённом тестировании]()
-* [Отчёт о проведённой автоматизации]()
+* [Отчёт о проведённом тестировании](https://github.com/supernatashenka/aqa-diploma-kostina/blob/main/Documents/Report.md)
+* [Отчёт о проведённой автоматизации](https://github.com/supernatashenka/aqa-diploma-kostina/blob/main/Documents/Summary.md)
 
 ## Перечень необходимого ПО 
 1. IntelliJ IDEA 2022.3.2 (Community Edition)
