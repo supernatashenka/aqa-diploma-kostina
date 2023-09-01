@@ -17,4 +17,4 @@
 
 
 ## Общие рекомендации
-Список найденных дефектов и рекомендаций на улучшение сервиса находится в [Issues](https://github.com/persikfloro/diploma-qa/issues).
+Список найденных дефектов и рекомендаций на улучшение сервиса находится в [Issues](https://github.com/supernatashenka/aqa-diploma-kostina/issues).
