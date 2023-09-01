@@ -1,10 +1,8 @@
 package org.service.page;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.service.data.DataGenerator;
-import org.service.data.DataHelper;
 
 
 import java.time.Duration;
@@ -25,6 +23,7 @@ public class MainPage {
     }
 
     public void payWithCreditCard() {
+
         buyWithCreditCardButton.click();
     }
 
@@ -65,15 +64,10 @@ public class MainPage {
         cardholderError.shouldHave(exactText(text));
     }
 
-
-
     public void getCVCError(String text) {
         CVCError.shouldBe(visible);
         CVCError.shouldHave(exactText(text));
     }
-
-
-
 
     public void findSuccessNotification() {
         $(byText("Операция одобрена Банком.")).shouldBe(visible, Duration.ofSeconds(15));
@@ -84,98 +78,31 @@ public class MainPage {
     }
 
 
-    public void findContinue() {
-        $(byText("Продолжить")).shouldBe(visible, Duration.ofSeconds(15));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public void fillForm (DataGenerator.CardInfo cardInfo) {
+        inputCardNumber.setValue(cardInfo.getCardNumber());
+        inputMonth.setValue(cardInfo.getMonth());
+        inputYear.setValue(cardInfo.getYear());
+        inputOwner.setValue(cardInfo.getOwner());
+        inputCVV.setValue(cardInfo.getCardCVV());
+
     }
-
-
-
-    public void fillDateOwnerCVV() {
-        inputMonth.setValue(DataGenerator.generateCurrentMonth());
-        inputYear.setValue(DataGenerator.generateCurrentYear());
-        inputOwner.setValue(DataGenerator.generateValidName());
-        inputCVV.setValue(DataGenerator.generateCVC());
-        clickContinueButton();
-    }
-
-
-
-    public void fillRandomCardForm() {
-        inputCardNumber.setValue(DataGenerator.generateCreditCard());
-        inputMonth.setValue(DataGenerator.generateCurrentMonth());
-        inputYear.setValue(DataGenerator.generateCurrentYear());
-        inputOwner.setValue(DataGenerator.generateValidName());
-        inputCVV.setValue(DataGenerator.generateCVC());
-        clickContinueButton();
-    }
-
-    public void fillValidOwner(){
-        inputOwner.setValue(DataGenerator.generateValidName());
-    }
-
-    public void fillValidCvv(){
-        inputCVV.setValue(DataGenerator.generateCVC());
-    }
-
-
-
-
-    public void fillCardNumber1() {
-        inputCardNumber.setValue(DataHelper.getCardNumber1());
-    }
-
-    public void fillCardNumber2() {
-        inputCardNumber.setValue(DataHelper.getCardNumber2());
-    }
-
-
-    public void fillCardNumberShort() {
-        inputCardNumber.setValue(DataGenerator.generateShortCardNumber());
-    }
-
-
-    public void fillMonthPrevious() {
-        inputMonth.setValue(DataGenerator.generatePreviousMonth());
-    }
-
-    public void fillNextMonth() {
-        inputMonth.setValue(DataGenerator.generateNextMonth());
-    }
-
-    public void fillMonthGreaterThanTwelve() {
-        inputMonth.setValue(DataGenerator.generateMonthNumberGreaterThanTwelve());
-    }
-
-    public void fillMonthZero() {
-        inputMonth.setValue("00");
-    }
-
-
-    public void fillYearCurrent() {
-        inputYear.setValue(DataGenerator.generateCurrentYear());
-    }
-
-    public void fillYearPrevious() {
-        inputYear.setValue(DataGenerator.generatePreviousYear());
-    }
-
-    public void fillYearInvalidFuture() {
-        inputYear.setValue(DataGenerator.generateInvalidYearFuture());
-    }
-
-
-    public void fillOwnerFirstName() {
-        inputOwner.setValue(DataGenerator.generateFirstName());
-    }
-
-    public void fillOwnerCyrillic() {
-        inputOwner.setValue(DataGenerator.generateCyrillicName("ru"));
-    }
-
-    public void fillCVVInvalid() {
-        inputCVV.setValue(DataGenerator.generateInvalidCVC());
-    }
-
 
 
 
