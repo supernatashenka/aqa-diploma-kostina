@@ -77,24 +77,6 @@ public class MainPage {
         $(byText("Ошибка! Банк отказал в проведении операции.")).shouldBe(visible, Duration.ofSeconds(15));
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public void fillForm (DataGenerator.CardInfo cardInfo) {
         inputCardNumber.setValue(cardInfo.getCardNumber());
         inputMonth.setValue(cardInfo.getMonth());

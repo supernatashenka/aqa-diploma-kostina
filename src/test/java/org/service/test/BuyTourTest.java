@@ -5,6 +5,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import org.service.data.DBHelper;
 import org.service.page.MainPage;
+
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.service.data.DataGenerator.*;
@@ -16,17 +17,17 @@ public class BuyTourTest {
     }
 
     @AfterEach
-    void clearTable()  {
+    void clearTable() {
         DBHelper.cleanDatabase();
     }
 
     @BeforeEach
-        void openPage() {
+    void openPage() {
         open("http://localhost:8080");
     }
 
     @AfterAll
-    static  void tearDownAll() {
+    static void tearDownAll() {
         SelenideLogger.removeListener("allure");
     }
 
