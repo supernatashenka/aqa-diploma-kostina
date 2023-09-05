@@ -1,19 +1,21 @@
 # Отчёт о проведённом тестировании
 ## Краткое описание
 - Автоматизировано тестирование комплексного сервиса покупки тура, взаимодействующего с СУБД, согласно [плану автоматизации](https://github.com/supernatashenka/aqa-diploma-kostina/blob/main/Documents/Plan.md)
-- Общее количество тест кейсов: 40 
+- Общее количество тест кейсов: 36
 
 ### Статистика успешных/неуспешных кейсов
 ### *При подключении к БД MySQL:*
-- Успешных тестов - 75% (30 тестов)
-- Неуспешных тестов - 25% (10 тестов)
-![report SQL](https://github.com/supernatashenka/aqa-diploma-kostina/assets/122474543/4d5726a5-f2f3-434c-b0a8-e793f1df7601)
+- Успешных тестов - 72.22% (26 тестов)
+- Неуспешных тестов - 27.78% (10 тестов)
+
+![report SQL](https://github.com/supernatashenka/aqa-diploma-kostina/assets/122474543/591003d4-119d-44a3-99b1-03a433eadac3)
 
 
 ### *При подключении к БД PostgreSQL:*
-- Успешных тестов - 75% (30 тестов)
-- Неуспешных тестов - 25% (10 тестов)
-![report postgre](https://github.com/supernatashenka/aqa-diploma-kostina/assets/122474543/2239fc78-862e-4d48-b9a9-5e758f729557)
+- Успешных тестов - 72.22% (26 тестов)
+- Неуспешных тестов - 27.78% (10 тестов)
+
+![report postgre](https://github.com/supernatashenka/aqa-diploma-kostina/assets/122474543/82808593-0bc3-486f-8219-6bb76b607f4d)
 
 
 ## Общие рекомендации
